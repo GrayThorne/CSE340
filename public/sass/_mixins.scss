@@ -1,0 +1,13 @@
+@use '_variables' as*;
+
+@mixin upgrade_back{
+    background-color: $color-3-light_sea_green;
+    border-radius: 12px;
+}
+
+@mixin background_site{
+    background-image: url(../images/site/checkerboard.jpg);
+    position: relative;
+    z-index: -2;
+}
+

@@ -1,0 +1,39 @@
+@use '_mixins' as *;
+@use '_variables' as*;
+
+/* CSS code for the header*/
+
+#top-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+   a{text-decoration: none;}
+
+    .siteName{
+        color: $color-1-gunmetal;
+        font-size: 40px;
+    }
+    #tools{
+        color: $color-1-gunmetal;
+        justify-self: flex-end;
+    }
+}
+
+/*Nav bar CSS code*/
+nav{
+    background-color: $color-1-gunmetal;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding-inline-start: 0px;
+        li{
+            font-size: 18px;
+            color: $color-4-platinum;
+        }
+    }
+}
