@@ -16,13 +16,14 @@ h1, h2, h3 {
 .feature_1{
     width: 50%;
     height: 300px;
+    @include site_margin;
 
     #delorean_jpg{
         // margin-left: 150px;
         position: relative;
 
         img{
-            width: 460px;
+            width: 452px;
             // min-width: 300px;
         }
     }
@@ -30,6 +31,7 @@ h1, h2, h3 {
 #feature_1_list{
     padding-left: 7px;
     border-style: solid;
+    border-radius: 10px;
     border-color: $color-1-opacity;
     width: 208px;
     background-color: $color-2-opacity;
@@ -70,6 +72,7 @@ h1, h2, h3 {
     grid-template-columns: repeat(2, 150px);
     grid-template-rows: 50px repeat(2, 150px);
     gap: 5px;
+    @include site_margin;
 
     a{
         font-family: $para-font;
@@ -140,9 +143,14 @@ h1, h2, h3 {
 /* Review section styling*/
 .review_section{
         padding: 10px;
+        background-color: $color-2-opacity;
+        border-radius: 10px;
+        color: $color-4-platinum;
+        @include site_margin;
 
         h3{
             font-size: 20px;
+            color: $color-4-platinum;
         }
 
     #reviews_1{
@@ -152,6 +160,13 @@ h1, h2, h3 {
             padding-bottom: 25px;
             font-family: $para-font;
         }
+    }
+}
+
+/* Small screen for Delorean upgrades */
+@media only screen and (max-width: 600px) {
+    .feature_upgrade{
+        margin-left: 80px;
     }
 }
 

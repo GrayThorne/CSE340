@@ -15,17 +15,19 @@ h1, h2, h3 {
 .feature_1 {
   width: 50%;
   height: 300px;
+  margin: 10px;
 }
 .feature_1 #delorean_jpg {
   position: relative;
 }
 .feature_1 #delorean_jpg img {
-  width: 460px;
+  width: 452px;
 }
 
 #feature_1_list {
   padding-left: 7px;
   border-style: solid;
+  border-radius: 10px;
   border-color: hsla(188, 63%, 9%, 0.2);
   width: 208px;
   background-color: hsla(74, 32%, 32%, 0.7);
@@ -62,6 +64,7 @@ h1, h2, h3 {
   grid-template-columns: repeat(2, 150px);
   grid-template-rows: 50px repeat(2, 150px);
   gap: 5px;
+  margin: 10px;
 }
 .feature_upgrade a {
   font-family: "Montserrat", "Century Gothic", sans-serif;
@@ -125,9 +128,14 @@ h1, h2, h3 {
 /* Review section styling*/
 .review_section {
   padding: 10px;
+  background-color: hsla(74, 32%, 32%, 0.7);
+  border-radius: 10px;
+  color: hsl(0, 0%, 90%);
+  margin: 10px;
 }
 .review_section h3 {
   font-size: 20px;
+  color: hsl(0, 0%, 90%);
 }
 .review_section #reviews_1 {
   padding: 10px;
@@ -138,6 +146,12 @@ h1, h2, h3 {
   font-family: "Montserrat", "Century Gothic", sans-serif;
 }
 
+/* Small screen for Delorean upgrades */
+@media only screen and (max-width: 600px) {
+  .feature_upgrade {
+    margin-left: 80px;
+  }
+}
 /* Medium screen positioning */
 @media screen and (min-width: 700px) {
   .upgrade_review_container {
@@ -171,6 +185,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 10px;
 }
 #top-header a {
   text-decoration: none;
@@ -189,6 +204,7 @@ nav {
   background-color: hsl(188, 63%, 9%);
   padding-top: 1px;
   padding-bottom: 1px;
+  margin: 10px;
 }
 nav ul {
   display: flex;
