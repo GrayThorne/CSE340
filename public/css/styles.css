@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=New+Tegomin&display=swap");
 #wrapper {
   background-color: white;
+  border-style: solid;
+  border-color: hsl(74, 32%, 32%);
+  border-radius: 15px;
 }
 
 /* styling for feature 1 */
@@ -14,9 +17,10 @@ h1, h2, h3 {
   height: 300px;
 }
 .feature_1 #delorean_jpg {
-  margin-left: 150px;
-  width: 100%;
-  height: 100%;
+  position: relative;
+}
+.feature_1 #delorean_jpg img {
+  width: 460px;
 }
 
 #feature_1_list {
@@ -24,7 +28,7 @@ h1, h2, h3 {
   border-style: solid;
   border-color: hsla(188, 63%, 9%, 0.2);
   width: 208px;
-  background-color: hsla(179, 100%, 33%, 0.2);
+  background-color: hsla(74, 32%, 32%, 0.7);
   z-index: 2;
   position: absolute;
 }
@@ -32,12 +36,12 @@ h1, h2, h3 {
   font-size: 30px;
   margin-bottom: 5px;
   margin-top: 5px;
-  color: hsl(188, 63%, 9%);
+  color: hsl(0, 0%, 90%);
 }
 #feature_1_list #list_1 {
   font-size: 20px;
   list-style: none;
-  color: hsl(188, 63%, 9%);
+  color: hsl(0, 0%, 90%);
   font-family: "Montserrat", "Century Gothic", sans-serif;
 }
 #feature_1_list #list_1 li {
@@ -144,6 +148,9 @@ h1, h2, h3 {
     background-image: url(../images/site/checkerboard.jpg);
     position: relative;
     z-index: -2;
+  }
+  #delorean_jpg {
+    margin-left: 150px;
   }
 }
 /* Large screen positioning */
