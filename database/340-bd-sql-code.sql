@@ -52,3 +52,13 @@ VALUES ('Custom'),
     ('SUV'),
     ('Truck'),
     ('Sedan');
+
+-- 4 Updated GM Hummer record
+UPDATE inventory 
+SET inv_description = REPLACE(inv_description, 'the small interiors', 'a huge interior')
+WHERE inv_id = 10
+
+-- 6 Update all records to have vehicles in middle of the file path
+UPDATE inventory
+SET	inv_image = REPLACE(inventory.inv_image, '/images/', '/images/vehicles/'),
+	inv_thumbnail = REPLACE(inventory.inv_thumbnail,'/images/', '/images/vehicles/' )
