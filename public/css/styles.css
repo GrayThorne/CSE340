@@ -189,9 +189,9 @@ h1, h2, h3 {
 }
 #top-header a {
   text-decoration: none;
+  color: hsl(188, 63%, 9%);
 }
 #top-header .siteName {
-  color: hsl(188, 63%, 9%);
   font-size: 40px;
 }
 #top-header #tools {
@@ -205,6 +205,10 @@ nav {
   padding-top: 1px;
   padding-bottom: 1px;
   margin: 10px;
+}
+nav a {
+  text-decoration: none;
+  color: hsl(0, 0%, 90%);
 }
 nav ul {
   display: flex;

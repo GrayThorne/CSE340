@@ -9,10 +9,12 @@
     justify-content: space-between;
     @include site_margin;
 
-   a{text-decoration: none;}
+    a{
+    text-decoration: none;
+    color: $color-1-gunmetal;
+    }
 
     .siteName{
-        color: $color-1-gunmetal;
         font-size: 40px;
     }
     #tools{
@@ -26,7 +28,13 @@ nav{
     background-color: $color-1-gunmetal;
     padding-top: 1px;
     padding-bottom: 1px;
+    
     @include site_margin;
+
+    a{
+        text-decoration: none;
+        color: $color-4-platinum;
+    }
 
     ul{
         display: flex;
