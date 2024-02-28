@@ -14,7 +14,10 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute")
 const utilities = require("./utilities/index")
+const bodyParser = require("body-parser")
+
 
 /* **********************
 * Middleware
@@ -37,6 +40,10 @@ app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -48,17 +55,29 @@ app.set("layout", "./layouts/layout") //not at views root
  * Routes
  *************************/
 app.use(static)
+
 //Inventory routes
 app.use("/inv", inventoryRoute)
 
+//Account Route
+app.use("/account", accountRoute)
+
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
+
+// Intentional error route
+app.get("/intentional-error", (req, res, next) => {
+  const error = new Error("Intentional error for testing purposes");
+  error.status = 500; // Set status code to 500
+  //console.log(error.status)
+  error.message = 'Oh no! There was a crash. Maybe try a different route?'
+  next(error);
+});
 
 //File Not Found Route - must be last route in list
 app.use(async(req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
 })
-
 
 /* ***********************
 * Express Error Handler
