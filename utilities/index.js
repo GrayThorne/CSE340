@@ -61,41 +61,19 @@ Util.buildClassificationGrid = async function(data){
 /***********************************
  * Build the vehicle details view page HTML
  * *********************************/
-Util.buildInvDetailGrid = async function(data){
-    let grid
-    if(data){
-      grid = '<div class="inv-detail-view">'
-  
-        grid += '<div class="image-Section"'
-  
-          grid += '<div class="inv-detail-hero-image">'
-          grid += '<img src=' + data[0].inv_image + 'alt="hero image of car selected"' + '/>'
-          grid += '</div>'
-  
-          grid += '<div class="inv-detail-thumbnail">'
-          grid += '<img src =' + data[0].thumbnail + 'alt = "thumbnail image of car"' + '/>'
-          grid += '</div>'
-  
-        grid += '</div>'
-  
-        grid += '<div class="inv-detail-primary">'
-        + "<h3> Model: </h3>" + data[0].invModel
-        + "<h3> Year: </h3>" + data[0].inv_year
-        + "<h3> Miles: </h3>" + data[0].inv_miles
-        + "<h3> Color: </h3>" + data[0].inv_color
-        grid += '</div>'
-  
-        grid += '<div class="inv-detail-secondary">'
-        + "<h3> Description: </h3>" + data[0].inv_description
-        + "<h3> Price: </h3>" + "$" +  data[0].inv_price
-        grid += '</div>'
-  
-      grid += '</div>'
-    } else {
-      grid += '<p class="notice"> Sorry, but we are unable to find what you are looking for! </p>'
-    }
-    return grid
-  }
+Util.buildVehicleDetail = function (vehicle) {
+  let detailHTML = `<div class="vehicle-detail">`;
+  detailHTML += `<img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" style="width:100%;">`;
+
+  detailHTML += `<h2>${vehicle.inv_make} ${vehicle.inv_model} Details </h2>`;
+  detailHTML += `<p id="grey" ><strong>Price: $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</strong></p>`;
+  detailHTML += `<p><strong>Description:</strong> ${vehicle.inv_description}</p>`;
+  detailHTML += `<p id="grey"><strong>Color:</strong> ${vehicle.inv_color}</p>`;
+  detailHTML += `<p><strong>Mileage:</strong> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)} miles</p>`;
+  detailHTML += `</div>`;
+
+  return detailHTML;
+}
 /* ***************************************
 * Middleware For Handling Errors
 * Wrap other function in this for
